@@ -1,0 +1,77 @@
+﻿@model ShopProject.ViewModel.ProductListViewModel
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="container bg-white justify-content-center font-italic">
+    <div class="row mt-5">
+        <div class="col">
+            <a asp-action="KlantIndex">Terug naar assortiment</a>
+        </div>
+        <div class="col">
+            <a asp-action="Create">Create New Product</a>
+        </div>
+    </div>
+
+    <table class="mt-3">
+        <thead>
+            <tr>
+                @*<th class="col-md-4">
+                        @Html.DisplayNameFor(model => model.Producten[0].productId)
+                    </th>*@
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Producten[0].Naam)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Producten[0].Prijs)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Producten[0].productBeschrijving)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Producten[0].EenhedenInVoorraad)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Producten[0].EenhedenInBestelling)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Producten[0].InCatalogus)
+                </th>
+            </tr>
+        </thead>
+        <tbody class="justify-content-center">
+            @foreach (var item in Model.Producten)
+            {
+                <tr>
+                    @*<td class="col-md-4">
+                            @item.productId
+                        </td>*@
+                    <td class="col-md-4">
+                        @item.Naam
+                    </td>
+                    <td class="col-md-4">
+                        @item.Prijs
+                    </td>
+                    <td class="col-md-4">
+                        @item.productBeschrijving
+                    </td>
+                    <td class="col-md-4 text-center">
+                        @item.EenhedenInVoorraad
+                    </td>
+                    <td class="col-md-4 text-center">
+                        @item.EenhedenInBestelling
+                    </td>
+                    <td class="col-md-4 text-center">
+                        @item.InCatalogus
+                    </td>
+                    <td class="col-md-4">
+                        <a asp-action="Edit" asp-route-id="@item.productId">Edit</a>
+                    </td>
+                    <td class="col-md-4">
+                        <a asp-action="Delete" asp-route-id="@item.productId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

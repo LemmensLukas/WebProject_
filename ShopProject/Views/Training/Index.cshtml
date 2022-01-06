@@ -1,0 +1,112 @@
+﻿@model ShopProject.ViewModel.TrainingListViewModel
+@{
+    ViewData["Title"] = "Trainingen";
+}
+
+
+<div class="container bg-white justify-content-center font-italic">
+    <div class="row mt-5">
+        <div class="col">
+            <div class="text-center text-dark font-italic font-weight-bold" style="font-size: 20px">
+                <p class="">Geïnteresseerd in badmitonnen bij onze badmintonclub?</p>
+                Hieronder kan u alle informatie vinden rond de trainingsagenda.
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center mt-4">Vaste Trainingen</h2>
+
+    <p class="text-center">
+        @if (this.User.IsInRole("Admin"))
+        {
+            <a asp-action="Create">Create New Training</a>
+
+        }
+    </p>
+    <table class="mb-5">
+        <thead>
+            <tr>
+                @*<th class="col-md-4">
+                        @Html.DisplayNameFor(model => model.Trainingen[0].ID)
+                    </th>*@
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Trainingen[0].Datum)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Trainingen[0].TrainingsDuur)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Trainingen[0].Locatie)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Trainingen[0].AantalBeschikbareVelden)
+                </th>
+            </tr>
+        </thead>
+        <tbody class="justify-content-center">
+            @foreach (var item in Model.Trainingen)
+            {
+                <tr>
+                    @*<td class="col-md-4">
+                            @item.ID
+                        </td>*@
+                    <td class="col-md-4">
+                        @item.Datum
+                    </td>
+                    <td class="col-md-4">
+                        @item.TrainingsDuur
+                    </td>
+                    <td class="col-md-4">
+                        @item.Locatie
+                    </td>
+                    <td class="col-md-4 text-center">
+                        @item.AantalBeschikbareVelden
+                    </td>
+                    <td class="col-md-4">
+                        @if (this.User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+
+                        }
+                    </td>
+                    <td class="col-md-4">
+                        @if (this.User.IsInRole("Admin"))
+                        {
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        }
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="row mt-5">
+        <div class="col">
+            <div class="text-center text-dark font-italic ml-5 mr-5" style="font-size: 20px">
+                <p class="font-weight-bold">Nieuwkomer?</p>
+                Ben je nog geen lid bij onze club?
+                Weet u niet zeker of badminton iets voor jou is?
+                Bij ons kan u twee keer een gratis training volgen.
+                Hierdoor kan u al eens kennismaken met onze leden en trainers?
+                Wilt u na deze twee traningen nog altijd lid worden dan kan dat bij een van onze trainers!
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center mt-5 bg-white">
+        <div class="col mt-2">
+            <img src="~/images/TrainingPageFoto.jpg" class="card-img-top" alt="..." style="width:32rem; height:18rem;">
+        </div>
+        <div class="col mt-2">
+            <img src="~/images/TrainingPageFoto.jpg" class="card-img-top" alt="..." style="width:32rem; height:18rem;">
+        </div>
+    </div>
+
+    <div class="col bg-white mt-5 mb-5">
+        <div class="row"></div>
+    </div>
+</div>
+    
+
+

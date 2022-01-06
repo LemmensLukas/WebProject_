@@ -1,0 +1,53 @@
+﻿@model ShopProject.ViewModel.CreateTrainingViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container bg-secondary justify-content-center font-italic">
+    <div class="text-center">
+        <h1 class="">Create</h1>
+
+        <h4>Training</h4>
+
+        <hr />
+
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Datum" class="control-label"></label>
+                        <input asp-for="Datum" class="form-control" />
+                        <span asp-validation-for="Datum" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TrainingsDuur" class="control-label"></label>
+                        <input asp-for="TrainingsDuur" class="form-control" />
+                        <span asp-validation-for="TrainingsDuur" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Locatie" class="control-label"></label>
+                        <input asp-for="Locatie" class="form-control" />
+                        <span asp-validation-for="Locatie" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AantalBeschikbareVelden" class="control-label"></label>
+                        <input asp-for="AantalBeschikbareVelden" class="form-control" />
+                        <span asp-validation-for="AantalBeschikbareVelden" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to list</a>
+        </div>
+    </div>
+    
+</div>
+    

@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Info";
+}
+
+
+<div class="container bg-secondary justify-content-center">
+    <div class=" text-center p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col px-0">
+            <h1 class="display-4 fst-italic">@ViewData["Title"]</h1>
+            <p class="lead my-3">Welkom op de info pagina van deze website. Hieronder vind je meer informatie over mezelf en de website!</p>
+            <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <h4>Profielgegevens</h4>
+    </div>
+
+    <div class="row m-5">
+        <div class="col">
+            <img class="justify-content-center mb-5" src="~/images/ProfielFoto.JPG" style="width:18rem; height:20rem;" />
+        </div>
+        @*<div class="col-md-6 mt-2 ">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/images/ProfielFoto.JPG" class="card-img-top img-responsive" alt="...">
+
+                </div>
+            </div>*@
+        <div class="col">
+            <div class="text-center text-light mt-5 mb-5">
+                <p class="">Informatie over mezelf</p>
+
+                Mijn naam is Lukas Lemmens.<br />
+
+                Ik ben 19 jaar en ben afkomstig uit Herentals.<br />
+
+                Ik volg de opleiding graduaat Programmeren op Thomas More Geel.<br />
+
+                Dit project is gemaakt voor het vak Webapplicaties.<br />
+
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+
+    <h4 class="text-center">Wat staat waar?</h4>
+    <div class="row ml-5">
+        <div class="col-4 mt-2 text-center">
+            <p>Algemen Info over onze club: <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"> Home</a></p>
+        </div>
+        <div class="col-4 mt-2 text-center">
+            <p>Info over onze trainingen: <a class="nav-link" asp-area="" asp-controller="Training" asp-action="Index"> Trainingen</a></p>
+        </div>
+        <div class="col-4 mt-2 text-center">
+            <p>Info over aan te bieden producten: <a class="nav-link" asp-area="" asp-controller="Shop" asp-action="KlantIndex"> Producten</a></p>
+        </div>
+    </div>
+</div>
+
+

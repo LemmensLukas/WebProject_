@@ -1,0 +1,47 @@
+﻿@model ShopProject.ViewModel.DeleteTrainingViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container bg-secondary justify-content-center font-italic">
+    <div class="text-center">
+
+        <h1>Delete</h1>
+        <h2>Are u sure u want to delete @Model.Datum @Model.TrainingsDuur ?</h2>
+        <h4>Training</h4>
+        <hr />
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Delete">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Datum" class="control-label"></label>
+                        : @Model.Datum
+                        <span asp-validation-for="Datum" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TrainingsDuur" class="control-label"></label>
+                        : @Model.TrainingsDuur
+                        <span asp-validation-for="TrainingsDuur" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Locatie" class="control-label"></label>
+                        : @Model.Locatie
+                        <span asp-validation-for="Locatie" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AantalBeschikbareVelden" class="control-label"></label>
+                        : @Model.AantalBeschikbareVelden
+                        <span asp-validation-for="AantalBeschikbareVelden" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <a asp-action="Index">Back to list</a>
+        </div>
+    </div>
+</div>

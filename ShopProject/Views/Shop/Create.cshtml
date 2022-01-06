@@ -1,0 +1,59 @@
+﻿@model ShopProject.ViewModel.CreateProductViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container bg-secondary justify-content-center font-italic">
+    <div class="text-center">
+        <h1>Create</h1>
+
+        <h4>Product</h4>
+        <hr />
+        <div class="row text-center justify-content-center">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Naam" class="control-label"></label>
+                        <input asp-for="Naam" class="form-control" />
+                        <span asp-validation-for="Naam" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Prijs" class="control-label"></label>
+                        <input asp-for="Prijs" class="form-control" />
+                        <span asp-validation-for="Prijs" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="productBeschrijving" class="control-label"></label>
+                        <input asp-for="productBeschrijving" class="form-control" />
+                        <span asp-validation-for="productBeschrijving" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EenhedenInVoorraad" class="control-label"></label>
+                        <input asp-for="EenhedenInVoorraad" class="form-control" />
+                        <span asp-validation-for="EenhedenInVoorraad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EenhedenInBestelling" class="control-label"></label>
+                        <input asp-for="EenhedenInBestelling" class="form-control" />
+                        <span asp-validation-for="EenhedenInBestelling" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="InCatalogus" class="control-label"></label>
+                        <input asp-for="InCatalogus" class="form-control" />
+                        <span asp-validation-for="InCatalogus" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to list</a>
+        </div>
+    </div>
+</div>
